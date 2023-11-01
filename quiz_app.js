@@ -1,13 +1,4 @@
-const quizPack = [
-  {
-    question: `In 1768, Captain James Cook set out to explore which ocean?`,
-    A: `Pacific Ocean`,
-    B: `Atlantic Ocean`,
-    C: `Indian Ocean`,
-    D: `Arctic Ocean`,
-    answer: 'A'
-  }
-]
+import { quizPack } from "./q&a.js";
 
 let currentPack = quizPack[0];
 
@@ -22,3 +13,4 @@ A.innerText = `A. ${currentPack.A}`;
 B.innerText = `B. ${currentPack.B}`;
 C.innerText = `C. ${currentPack.C}`;
 D.innerText = `D. ${currentPack.D}`;
+let properAnswer = quizPack[0].answer;
