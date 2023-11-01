@@ -118,14 +118,36 @@ article {
   padding: 0.5rem;
   box-shadow: 0 0 3px 1px #000;
   border-radius: 1.5rem;
+  cursor: pointer;
 }
 
-#result {
+.proper-answer {
+  background-color: #26bd18;
+}
+
+.wrong-answer {
+  background-color: #f00;
+}
+
+#button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
   margin-top: 1rem;
+}
+
+#button-container button {
+  cursor: pointer;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 0 3px 1px #000;
+}
+
+.hidden {
+  display: none;
 }
 
 /* footer */
