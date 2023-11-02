@@ -6,6 +6,8 @@ const B = document.getElementById('B');
 const C = document.getElementById('C');
 const D = document.getElementById('D');
 
+const questions = quizPack.length;
+let score = 0;
 let properAnswer = '';
 let index = 0;
 let answer = false;
@@ -39,6 +41,7 @@ A.addEventListener('click', () => {
   if(!answer) {
     if(currentAnswer === properAnswer) {
       A.classList.add('proper-answer');
+      score++;
     } else {
       A.classList.add('wrong-answer');
     }
@@ -50,6 +53,7 @@ B.addEventListener('click', () => {
   if(!answer) {
     if(currentAnswer === properAnswer) {
       B.classList.add('proper-answer');
+      score++;
     } else {
       B.classList.add('wrong-answer');
     }
@@ -61,6 +65,7 @@ C.addEventListener('click', () => {
   if(!answer) {
     if(currentAnswer === properAnswer) {
       C.classList.add('proper-answer');
+      score++;
     } else {
       C.classList.add('wrong-answer');
     }
@@ -72,6 +77,7 @@ D.addEventListener('click', () => {
   if(!answer) {
     if(currentAnswer === properAnswer) {
       D.classList.add('proper-answer');
+      score++;
     } else {
       D.classList.add('wrong-answer');
     }
@@ -83,10 +89,14 @@ const nextButton = document.getElementById('next-button');
 const resetButton = document.getElementById('reset-button');
 nextButton.addEventListener('click', () => {
   if(answer === true) {
-    if(index < quizPack.length - 1) {
+    if(index < questions - 1) {
       index++;
       getQuizPack(quizPack[index]);
     } else {
+      questionContainer.innerText = '';
+      let h2 = document.createElement('h2');
+      h2.innerText = `Score: ${score}/${questions}`
+      questionContainer.appendChild(h2);
       nextButton.classList.toggle('hidden');
       resetButton.classList.toggle('hidden');
     }
@@ -95,6 +105,7 @@ nextButton.addEventListener('click', () => {
 
 resetButton.addEventListener('click', () => {
   index = 0;
+  score = 0;
   nextButton.classList.toggle('hidden');
   resetButton.classList.toggle('hidden');
   getQuizPack(quizPack[index]);
