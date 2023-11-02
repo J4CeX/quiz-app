@@ -82,12 +82,14 @@ D.addEventListener('click', () => {
 const nextButton = document.getElementById('next-button');
 const resetButton = document.getElementById('reset-button');
 nextButton.addEventListener('click', () => {
-  if(index < quizPack.length) {
-    index++;
-    getQuizPack(quizPack[index]);
-  } else {
-    nextButton.classList.toggle('hidden');
-    resetButton.classList.toggle('hidden');
+  if(answer === true) {
+    if(index < quizPack.length - 1) {
+      index++;
+      getQuizPack(quizPack[index]);
+    } else {
+      nextButton.classList.toggle('hidden');
+      resetButton.classList.toggle('hidden');
+    }
   }
 });
 
