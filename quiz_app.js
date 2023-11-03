@@ -23,6 +23,8 @@ const getQuizPack = (currentPack) => {
   clearAnswers();
 }
 
+getQuizPack(quizPack[index]);
+
 const clearAnswers = () => {
   A.classList.remove('proper-answer');
   A.classList.remove('wrong-answer');
@@ -33,8 +35,6 @@ const clearAnswers = () => {
   D.classList.remove('proper-answer');
   D.classList.remove('wrong-answer');
 }
-
-getQuizPack(quizPack[index]);
 
 A.addEventListener('click', () => {
   const currentAnswer = 'A';
