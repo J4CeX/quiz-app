@@ -12,6 +12,17 @@ let properAnswer = '';
 let index = 0;
 let answer = false;
 
+const clearAnswers = () => {
+  A.classList.remove('proper-answer');
+  A.classList.remove('wrong-answer');
+  B.classList.remove('proper-answer');
+  B.classList.remove('wrong-answer');
+  C.classList.remove('proper-answer');
+  C.classList.remove('wrong-answer');
+  D.classList.remove('proper-answer');
+  D.classList.remove('wrong-answer');
+}
+
 const getQuizPack = (currentPack) => {
   answer = false;
   questionContainer.innerText = currentPack.question;
@@ -24,17 +35,6 @@ const getQuizPack = (currentPack) => {
 }
 
 getQuizPack(quizPack[index]);
-
-const clearAnswers = () => {
-  A.classList.remove('proper-answer');
-  A.classList.remove('wrong-answer');
-  B.classList.remove('proper-answer');
-  B.classList.remove('wrong-answer');
-  C.classList.remove('proper-answer');
-  C.classList.remove('wrong-answer');
-  D.classList.remove('proper-answer');
-  D.classList.remove('wrong-answer');
-}
 
 A.addEventListener('click', () => {
   const currentAnswer = 'A';
